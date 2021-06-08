@@ -43,6 +43,13 @@
     "tslib": "^2.2.0",
     "typescript": "^4.2.4"
   },
+  "resolutions": {
+    "@typescript-eslint/eslint-plugin": "^4.23.0",
+    "@typescript-eslint/parser": "^4.23.0",
+    "prettier": "^2.3.0",
+    "tslib": "^2.2.0",
+    "typescript": "^4.2.4"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "tsdx lint"
