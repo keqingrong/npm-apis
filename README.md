@@ -36,6 +36,7 @@ import { outdated } from '@keqingrong/npm-apis';
 
 - `install(pkg?: string, config?: Partial<Config> | null, options?: SpawnOptions)`
 - `outdated(config?: Partial<Config> | null, options?: SpawnOptions)`
+- `version(release?: ReleaseType, config?: Partial<Config> | null, options?: SpawnOptions)`
 
 ## License
 
