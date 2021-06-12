@@ -34,9 +34,9 @@ import { outdated } from '@keqingrong/npm-apis';
 
 ## APIs
 
-- `install(pkg?: string)` Install a package
+- `install(pkg)` Install a package
 - `outdated()` Check for outdated packages
-- `version(release?: ReleaseType)` Bump a package version
+- `version(release)` Bump a package version
 
 ## License
 
