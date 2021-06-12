@@ -1,4 +1,5 @@
-import { spawn, SpawnOptions } from 'child_process';
+import { SpawnOptions } from 'child_process';
+import { spawnAsync } from '../spawn';
 import { npm } from '../variables';
 
 /**
@@ -46,15 +47,5 @@ export async function outdated<T = SpawnOptions>(
     }
   }
 
-  return new Promise<string>((resolve, reject) => {
-    const outdated = spawn(npm, args, options);
-
-    outdated.stdout.on('data', data => {
-      resolve(data.toString());
-    });
-
-    outdated.stderr.on('data', data => {
-      reject(new Error(data.toString()));
-    });
-  });
+  return spawnAsync(npm, args, options);
 }
