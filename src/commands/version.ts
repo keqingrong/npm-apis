@@ -41,7 +41,7 @@ interface Config {
 
 type ConfigName = keyof Config;
 
-type ReleaseType =
+export type ReleaseType =
   | 'major'
   | 'minor'
   | 'patch'
@@ -49,7 +49,7 @@ type ReleaseType =
   | 'preminor'
   | 'prepatch'
   | 'prerelease';
-type NewVersionType =
+export type NumericVersionType =
   | `${number}.${number}.${number}`
   | `${number}.${number}.${number}-${number}`
   | `${number}.${number}.${number}-${string}.${number}`;
@@ -65,7 +65,7 @@ type NewVersionType =
  * npm.version('prerelease', { preid: 'beta' });
  */
 export async function version<T = SpawnOptions>(
-  release?: ReleaseType | NewVersionType,
+  release?: ReleaseType | NumericVersionType,
   config?: Partial<Config> | null,
   options?: T
 ) {
