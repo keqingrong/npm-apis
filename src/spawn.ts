@@ -7,7 +7,7 @@ const isBufferList = (data: DataType[]): data is Buffer[] =>
   data.length > 0 && Buffer.isBuffer(data[0]);
 
 /**
- * Promisified `spawn`
+ * Promisified `child_process.spawn()`
  *
  * - https://nodejs.org/api/child_process.html#child_process_child_process_spawn_command_args_options
  * - https://nodejs.org/api/stream.html#stream_event_data
@@ -61,7 +61,7 @@ export const spawnAsync = (
 };
 
 /**
- * Promisified `spawn`
+ * Promisified `child_process.spawn()`
  */
 export const spawnAsyncSimple = (
   command: string,

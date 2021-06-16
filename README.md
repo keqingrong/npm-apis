@@ -37,6 +37,7 @@ import { outdated } from '@keqingrong/npm-apis';
 - `install(pkg)` Install a package
 - `outdated()` Check for outdated packages
 - `version(release)` Bump a package version
+- `spawnAsync()` Promisified `child_process.spawn()`
 
 ## License
 
