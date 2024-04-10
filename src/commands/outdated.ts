@@ -1,11 +1,12 @@
 import { SpawnOptions } from 'child_process';
 import { spawnAsync } from '../spawn';
 import { npm } from '../variables';
+import { LogLevelConfig } from './types';
 
 /**
  * <https://docs.npmjs.com/cli/v7/commands/npm-outdated#configuration>
  */
-interface Config {
+interface Config extends LogLevelConfig {
   /** Show information in JSON format */
   json: boolean;
   /** Show extended information */
@@ -30,7 +31,7 @@ type ConfigName = keyof Config;
  * npm.outdated();
  * npm outdated({ json: true });
  */
-export async function outdated<T = SpawnOptions>(
+export async function outdated<T extends SpawnOptions>(
   config?: Partial<Config> | null,
   options?: T
 ) {

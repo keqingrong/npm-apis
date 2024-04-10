@@ -1,11 +1,12 @@
 import { SpawnOptions } from 'child_process';
 import { spawnAsync } from '../spawn';
 import { npm } from '../variables';
+import { LogLevelConfig } from './types';
 
 /**
  * <https://docs.npmjs.com/cli/v7/commands/npm-version#configuration>
  */
-interface Config {
+interface Config extends LogLevelConfig {
   /**
    * Prevents throwing an error when `npm version` is used to set the new
    * version to the same value as the current version.
@@ -64,7 +65,7 @@ export type NumericVersionType =
  * npm.version('prerelease');
  * npm.version('prerelease', { preid: 'beta' });
  */
-export async function version<T = SpawnOptions>(
+export async function version<T extends SpawnOptions>(
   release?: ReleaseType | NumericVersionType,
   config?: Partial<Config> | null,
   options?: T

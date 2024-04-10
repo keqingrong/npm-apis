@@ -2,11 +2,12 @@ import { SpawnOptions } from 'child_process';
 import decamelize from 'decamelize';
 import { spawnAsync } from '../spawn';
 import { npm } from '../variables';
+import { LogLevelConfig } from './types';
 
 /**
  * <https://docs.npmjs.com/cli/v7/commands/npm-install#configuration>
  */
-interface Config {
+interface Config extends LogLevelConfig {
   /** --tag */
   tag: string;
   /** --global */
@@ -68,7 +69,7 @@ type ConfigName = keyof Config;
  * npm.install('eslint', { global: true });
  * npm.install('typescript', { saveDev: true });
  */
-export async function install<T = SpawnOptions>(
+export async function install<T extends SpawnOptions>(
   pkg?: string,
   config?: Partial<Config> | null,
   options?: T
